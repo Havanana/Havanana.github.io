@@ -43,7 +43,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/avatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/"></a></h1>
@@ -53,7 +53,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="/">Havana</a></li>
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 	        
@@ -101,7 +101,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/avatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author"></h1>
@@ -133,7 +133,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">Havana</a></li>
 		        
 					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
@@ -151,6 +151,71 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-JS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/08/JS/">Javascript</a>
+    </h1>
+  
+
+        
+        <a href="/2021/10/08/JS/" class="archive-article-date">
+  	<time datetime="2021-10-08T11:59:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><p>我们首先知道闭包有3个特性：<br><strong>①函数嵌套函数<br>②函数内部可以引用函数外部的参数和变量<br>③参数和变量不会被垃圾回收机制回收</strong></p>
+<h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><figure class="highlight plaintext"><figcaption><span>javascript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function fn()&#123;</span><br><span class="line">	var num = 3;</span><br><span class="line">   return function()&#123;</span><br><span class="line">   		var n = 0;</span><br><span class="line">      console.log(++n);</span><br><span class="line">      console.log(++num);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line">var fn1=fn();</span><br><span class="line">fn1();// 1  4</span><br><span class="line">fn1();// 1  5</span><br></pre></td></tr></table></figure>
+<p>一般情况下，在函数fn执行完后，就应该连同它里面的变量一同被销毁，，在这个例子中，匿名函数作为fn的返回值被赋值给了fn1，这时候相当于fn1=function(){var n = 0 … }。<br>并且匿名函数内部引用着fn里的变量num，所以变量num无法被销毁。<br>而变量n是每次被调用时新创建的，所以每次fn1执行完后它就把属于自己的变量连同自己一起销毁，于是乎最后就剩下孤零零的num，于是这里就产生了内存消耗的问题<br>这个叫作 JavaScript 闭包。它使得函数拥有<em>私有变量</em>变成可能。<br>计数器受匿名函数的作用域保护，只能通过 fn1 方法修改。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/10/08/JS/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-代码嵌入-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -604,7 +669,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">欢迎~&lt;br&gt;&lt;br&gt;这里就是一只菜鸡的挣扎</div>
   	  	
     	</section>
     
